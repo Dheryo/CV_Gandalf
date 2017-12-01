@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- HTML5 & CSS3 - Activité 2 (avec CSS mais sans Responsive design)
+<!-- HTML5 & CSS3 - Activité 3 (avec CSS dont usage de balises sémantiques et flexbox mais toujours sans Responsive design)
 	CV pseudo humoristique de Gandalf
 	J'espère que ça vous plaira. -->
 
@@ -11,35 +11,51 @@
 	</head>
 
 	<body>
-		<!-- Partie en-tête -->
-		<p id="portrait"><a href="ressources/pictures/Gandalf.jpg"><img src="ressources/pictures/Gandalf-preview.jpg" title="Zoomer" alt= "Portrait" /></a></p>
-		<h1>Gandalf</h1>
-		<p><q> You shall not pass !!! </q></p>	<!-- suite à la présentation de nouvelles balises, je trouvais que <q> pour citation courte était plus approprié que <h2>
-													que j'utilisais dans l'activité 1 -->
-		<div id="main">
-			<!-- Section expérience -->
-			<h2>Mon expérience</h2>				<!-- puisque je n'utilise plus <h2> pour la citation, j'ai basculé tous mes <h3> en <h2> -->
-			<ul>
-				<li><strong>Pré-premier âge :</strong> Création de chants qui inspireront la création du monde</li>
-				<li><strong>Premier âge :</strong> Encadrement à distance de la naissance du monde et de l'apparition des premiers êtres vivants</li>
-				<li><strong>Deuxième âge :</strong> Congé sabbatique</li>
-				<li><strong>Troisième âge :</strong> Prise de l'apparence d'un vieux mage pour la destruction de Sauron</li>
-			</ul>
-			
-			<!-- Section compétences -->
-			<h2>Mes compétences</h2>
-			<ul>
-				<li>Nez pour évaluation d'herbes à pipe</li>
-				<li>Guide touristique</li>
-				<li>Animation de colonies pour nains</li>
-				<li>Expert en feux d'artifices <ins>(merci de m'avoir fait remarquer que j'avais oublié cette compétence)</ins></li> <!-- compétences donnée par un correcteur de l'activité 1 ;-) -->
-			</ul>
-			
-			<!-- Section formation -->
-			<h2>Ma formation</h2>
-			<p class="to_indent">Je suis un fragment de l'esprit d'Ilùvatar, le créateur de tout.<br />
-			J'ai observé l'évolution du monde de sa création jusqu'à ce que je participe à la destruction de Sauron.<br />
-			Enfin, je suis considéré comme le plus sage des Valars.</p>
-		</div>
+		<aside>
+			<img src="ressources/pictures/map.png" alt="Fond liseré" />
+		</aside>
+
+		<section id="main">
+			<!-- Partie en-tête -->
+			<header>
+				<div id="titles">
+					<h1>Gandalf</h1>
+					<p><q> You shall not pass !!! </q></p>
+				</div>
+				<a href="ressources/pictures/Gandalf.jpg"><img src="ressources/pictures/Gandalf-preview.jpg" alt="Portrait" /></a>
+			</header>
+
+			<div id="sections">
+				<section>
+					<!-- Section expérience -->
+					<h2>Mon expérience</h2>
+					<ul>
+						<li><strong>Pré-premier âge :</strong> Création de chants qui inspireront la création du monde</li>
+						<li><strong>Premier âge :</strong> Encadrement à distance de la naissance du monde et de l'apparition des premiers êtres vivants</li>
+						<li><strong>Deuxième âge :</strong> Congé sabbatique</li>
+						<li><strong>Troisième âge :</strong> Prise de l'apparence d'un vieux mage pour la destruction de Sauron</li>
+					</ul>
+				</section>
+
+				<section>
+					<!-- Section compétences -->
+					<h2>Mes compétences</h2>
+					<ul>
+						<li>Nez pour évaluation d'herbes à pipe</li>
+						<li>Guide touristique</li>
+						<li>Animation de colonies pour nains</li>
+						<li>Expert en feux d'artifices <ins>(merci de m'avoir fait remarquer que j'avais oublié cette compétence)</ins></li> <!-- compétence donnée par un correcteur de l'activité 1 ;-) -->
+					</ul>
+				</section>	
+
+				<section>
+					<!-- Section formation -->
+					<h2>Ma formation</h2>
+					<p class="to_indent">Je suis un fragment de l'esprit d'Ilùvatar, le créateur de tout.<br />
+					J'ai observé l'évolution du monde de sa création jusqu'à ce que je participe à la destruction de Sauron.<br />
+					Enfin, je suis considéré comme le plus sage des Valars.</p>
+				</section>
+			</div>
+		</section>
 	</body>
 </html>
