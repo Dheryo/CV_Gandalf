@@ -1,16 +1,23 @@
 /* Cahier des charges :
-Liseré à gauche : 
-		- balise <aside> placée en ligne dans le conteneur <body>.
+Version Desktop :
+		- idem activité 3.
+Version Mobile, résolution d'écran jusqu'à 1024px de large:
+		* utilisation de la Media Query @media all and (max-device-width: 1024px),
+		* testé sur pc double écran d'abord en remplaçant 1024px par ma résolution habituelle,
+		* puis dans un deuxième temps en baissant la résolution d'un écran à 1024x768 (ce qui revient au même sauf qu'on ne touche plus au fichier),
+		* penser à actualiser la page à chaque changement (d'écran, de résolution, ou de modification dans le fichier CSS),
+		- faire disparaître le liseré :
+				* display: none dans <aside>,
+		- afficher les sections expérience, compétences et formation verticalement au lieu d'horizontalement :
+				* flex-direction: column dans #sections (au lieu de row),
+				* width: 100% dans #sections section (au lieu de 33%).
 
-Mon expérience / Mes compétences / Ma formation placés en ligne de gauche à droite : 
-		- chaque partie placée dans une <section> et placées en ligne dans le conteneur div#sections.
-
-Largeurs relatives avec le contenu qui prend toute la largeur en permanence : 
-		- <aside> prend 10% de la largeur de <body> avec un minimum de 65px pour respecter les arrondis, section#main qui contient le reste de la page s'adapte pour remplir la largeur,
-		- les 3 <section> prennent chacun 33% de div#sections (et non de l'écran) afin qu'ils conservent la même largeur (ok, il y a 1% qui traîne). 
-
-Utilisation des balises sémantiques :
-		- ce point est très subjectif, j'ai essayé d'utiliser au mieux les balises en plaçant le liseré de côté dans un <aside>, l'en-tête dans un <header>, les différentes sections dans des <section>.
+BONUS : (oui c'est un bonus et non ce n'est pas ce qui est demandé dans l'énoncé)
+Version fenêtrée, largeur de navigateur jusqu'à 1024px de large:
+	* utilisation de la Media Query @media all and (device-width: 1024px),
+	* test simple en réduisant la largeur de la fenêtre du navigateur,
+	* le code est strictement identique à celui pour la version Mobile, il suffit donc de placer les deux media queries ensemble de la façon suivante :
+	- @media all and (max-device-width: 1024px), all and (device-width: 1024px)
 */
 
 @font-face /* fonts trouvés sur fontsquirrel, le générateur n'a pas fourni d'autres formats */
@@ -121,4 +128,24 @@ ins
 {
 	font-style: italic;
 	font-size: 0.8em;
+}
+
+/* pour tout écran dont la résolution en largeur est inférieure ou égale à 1024 pixels 
+	OU pour toute fenêtre dont la largeur est infèrieure ou égale à 1024 pixels*/
+@media all and (max-device-width: 1024px), all and (max-width: 1024px)
+{
+	aside
+	{
+		display: none;
+	}
+
+	#sections
+	{
+		flex-direction: column;
+	}
+
+	#sections section
+	{
+		width: 100%;
+	}
 }
