@@ -1,0 +1,84 @@
+/* Cahier des charges :
+Changer la couleur d'un des textes 					: dans les blocks 'p, ul' / 'h1, h1+p' / 'h2'
+Changer l'alignement d'un des textes 				: dans le block 'h1, h1+p'
+Appliquer une image de fond à la page 				: dans le block 'body'
+Utiliser une police personnalisée via @font-face 	: définition dans le bloc '@font-face, utilisation dans le bloc 'h1'
+Définir une bordure à un élément 					: dans le bloc h2
+Définir une ombre à un élément 						: dans le bloc h2
+*/
+
+@font-face /* fonts trouvés sur fontsquirrel, le générateur n'a pas fourni d'autres formats */
+{
+	font-family: 'bilbo_swash';
+    src: url('ressources/fonts/BilboSwashCaps-Regular.otf') format('otf'),
+    url('ressources/fonts/bilboswashcaps-regular-webfont.woff2') format('woff2'),
+    url('ressources/fonts/bilboswashcaps-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p, ul
+{
+	color: #CCC;
+}
+
+h1, h1+p
+{
+	color: #666;
+	text-align: center;
+	margin: 20px;
+}
+
+h1
+{
+	font-family: 'bilbo_swash', serif;
+	text-transform: uppercase;
+	font-size: 48px;
+}
+
+h1+p
+{
+	font-family: serif;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+#portrait
+{
+	float: right;
+	margin: 0;
+	margin-right: 20px;
+	padding: 0;
+}
+
+#main
+{
+	clear: both;
+}
+
+.to_indent
+{
+	padding-left: 40px;
+}
+
+h2
+{
+	color: #999;
+	padding: 5px;
+	margin: 20px;
+	border: solid rgba(120, 120, 120, 0.6) 3px;
+	box-shadow: 7px 7px 3px rgba(90, 90, 90, 0.4);
+}
+
+body
+{
+	background-color: #000;		/* défini la couleur de fond en noir au cas où l'image ne se charge pas
+								car le texte s'affiche de gris à gris clair */
+	background-image: url("ressources/pictures/gandalf-vs-balrog.png");
+}
+
+ins
+{
+	font-style: italic;
+	font-size: 0.8em;
+}
